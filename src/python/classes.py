@@ -18,7 +18,22 @@ class Recipe:
 
 class Cookbook:
     def __init__(self):
-        self.__recipes = []
+
+        bread = Recipe("Bread")
+        breadRecipe = ["flour:3.25:cup", "salt:.75:teaspoon", "yeast:.25:ounce", "water:1.25:cup"]
+        bread.addIngredient(breadRecipe)
+
+        crepe = Recipe("Crepes")
+        crepeRecipe = ["flour:1:cup", "egg:2", "milk:.5:cup", "water:.5:cup", "salt:.25:teaspoon",
+                       "butterMelted:2:tablespoons"]
+        crepe.addIngredient(crepeRecipe)
+
+        pancake = Recipe("Pancakes")
+        pancakeRecipe = ["flout:1.5:cup", "bakingPowder:3.5:teaspoon", "sugar:1:tablespoon", "milk:1.25:cup",
+                         "egg:1", "butterMelted:3:tablespoons"]
+        pancake.addIngredient(pancakeRecipe)
+
+        self.__recipes = [bread, crepe, pancake]
         self.__groceryList = []
 
     def getCookbook(self):
@@ -39,3 +54,8 @@ class Cookbook:
     def getGroceryList(self):
         return self.__groceryList
 
+
+cookbook = Cookbook()
+for i in range(len(cookbook.getCookbook())):
+    print(cookbook.getRecipe(i).getName())
+    print(cookbook.getRecipe(i).getAllIngredients())
