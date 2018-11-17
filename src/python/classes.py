@@ -1,5 +1,5 @@
 class Recipe:
-    def __init__(self, name):
+    def __init__(self, name="Air"):
         self.__ingredients = []
         self.__name = name
 
